@@ -7,12 +7,48 @@
     <title>Rock Paper Scissors</title>
     <script>
       function computerPlay() {
-        const choices = ["Rock", "Paper", "Scissors"];
+        const choices = ["rock", "paper", "scissors"];
         const random = Math.floor(Math.random() * choices.length);
         return choices[random];
       }
 
-      console.log(computerPlay());
+      let computer = computerPlay();
+      console.log(computer);
+
+      let player = "rock";
+      console.log(player);
+
+      function playRound(playerSelection, computerSelection) {
+        if (playerSelection == computerSelection) {
+          console.log("Tie!");
+        } else if (
+          playerSelection == "rock" &&
+          computerSelection == "scissors"
+        ) {
+          console.log("Player wins! Rock crashes Scissors!");
+        } else if (playerSelection == "paper" && computerSelection == "rock") {
+          console.log("Player wins! Paper covers Rock!");
+        } else if (
+          playerSelection == "scissors" &&
+          computerSelection == "paper"
+        ) {
+          console.log("Player wins! Scissors cuts Paper!");
+        } else if (
+          computerSelection == "rock" &&
+          playerSelection == "scissors"
+        ) {
+          console.log("Computer wins! Rock craches Scissors");
+        } else if (computerSelection == "paper" && playerSelection == "rock") {
+          console.log("Computer wins! Paper covers Rock!");
+        } else if (
+          computerSelection == "scissors" &&
+          computerSelection == "paper"
+        ) {
+          console.log("Computer wins! Scissors cuts Paper!");
+        }
+      }
+
+      playRound(player, computer);
     </script>
   </head>
   <body></body>
